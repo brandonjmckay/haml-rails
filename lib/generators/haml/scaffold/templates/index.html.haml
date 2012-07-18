@@ -4,11 +4,11 @@
 	- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
 		%article.columns.twelve.<%= singular_table_name %>
 <% for attribute in attributes -%>
-			%.columns.four.<%= singular_table_name %>-<%= attribute.name %>= <%= singular_table_name %>.<%= attribute.name %>
+			%div.columns.four.<%= singular_table_name %>-<%= attribute.name %>= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
 			%aside.admin-links.columns.four
-				%.show.columns.four= link_to 'Show', <%= singular_table_name %>
-				%.edit.columns.four= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-				%.delete.columns.four= link_to 'Delete', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete
+				%div.show.columns.four= link_to 'Show', <%= singular_table_name %>
+				%div.edit.columns.four= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+				%div.delete.columns.four= link_to 'Delete', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete
 	%footer
 		= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
