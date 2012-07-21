@@ -4,7 +4,7 @@
 	
 	= render 'form'
 	
-	%.admin-links.columns.four
+	%div.admin-links.columns.four
 		= link_to 'Show', @<%= singular_table_name %>
 		\|
 		= link_to 'Back', <%= index_helper %>_path
