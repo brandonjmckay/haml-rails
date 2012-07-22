@@ -8,7 +8,7 @@
 		= @<%= singular_table_name %>.<%= attribute.name %>
 	<% end -%>
 	
-	%footer.admin-links.columns.four
+	%aside.admin-links.columns.four
 		= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
 		\|
 		= link_to 'Back', <%= index_helper %>_path
