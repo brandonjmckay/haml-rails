@@ -5,6 +5,5 @@
 	= render 'form'
 	
 	%aside.admin-links.columns.four
-		= link_to 'Show', @<%= singular_table_name %>
-		\|
-		= link_to 'Back', <%= index_helper %>_path
+		%span.edit.radius.label.secondary= link_to 'Show', @<%= singular_table_name %>
+		%span.edit.radius.label= link_to 'Back', <%= index_helper %>_path
