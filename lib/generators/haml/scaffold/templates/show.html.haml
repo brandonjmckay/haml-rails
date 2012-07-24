@@ -1,6 +1,7 @@
 %section.columns.twelve
 	%header.row
-		%div.notice= notice
+		-if notice
+			.alert-box.notice= notice
 
 	<% for attribute in attributes -%>
 	%p
@@ -8,6 +9,6 @@
 		= @<%= singular_table_name %>.<%= attribute.name %>
 	<% end -%>
 	
-	%aside.admin-links.columns.four
+	%aside.admin-links.absolute.top.right
 		%span.edit.radius.label= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
 		%span.edit.radius.label= link_to 'Back', <%= index_helper %>_path

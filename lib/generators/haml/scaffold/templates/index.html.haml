@@ -4,9 +4,9 @@
 	- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
 		%article.columns.twelve.<%= singular_table_name %>
 <% for attribute in attributes -%>
-			%div.columns.four.<%= singular_table_name %>-<%= attribute.name %>= <%= singular_table_name %>.<%= attribute.name %>
+			.columns.four.<%= singular_table_name %>-<%= attribute.name %>= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-			%aside.admin-links.columns.four
+			%aside.admin-links.absolute.top.right
 				%span.show.radius.label.secondary= link_to 'Show', <%= singular_table_name %>
 				%span.edit.radius.label= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
 				%span.delete.radius.label.alert= link_to 'Delete', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete
