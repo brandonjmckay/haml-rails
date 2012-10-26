@@ -1,14 +1,19 @@
-%section.columns.twelve
-	%header.row
-		-if notice
-			.alert-box.notice= notice
+%section.row
+	.span12
+		%header.row
+			-if notice
+				.alert.alert-info.span12= notice
 
-	<% for attribute in attributes -%>
-	%p
-		%strong <%= attribute.human_name %>:
-		= @<%= singular_table_name %>.<%= attribute.name %>
-	<% end -%>
+		<% for attribute in attributes -%>
+		.row
+			%strong.span3 <%= attribute.human_name %>:
+			.span8= @<%= singular_table_name %>.<%= attribute.name %>
+		<% end -%>
 	
-	%aside.admin-links.absolute.top.right
-		%span.edit.radius.label= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
-		%span.edit.radius.label= link_to 'Back', <%= index_helper %>_path
+		%aside.btn-group
+			= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => "btn btn-mini" do
+				%i.icon-pencil
+				Edit
+			= link_to <%= index_helper %>_path, :class => "btn btn-mini" do
+				%i.icon-backward
+				Back

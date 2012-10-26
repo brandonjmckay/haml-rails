@@ -1,7 +1,10 @@
-%section.columns.twelve
-	%header.row
-		%h1 New <%= singular_table_name %>
-	
-	= render 'form'
-	%footer.row
-		%span.radius.label= link_to 'Back to <%= plural_table_name %> list', <%= index_helper %>_path
+%section.row
+	.span12
+		%header.row
+			%h1 New <%= singular_table_name %>
+		.row
+			= render 'form'
+		%footer.row
+			= link_to <%= index_helper %>_path, :class => "btn" do
+				%i.icon-backward
+				Back to <%= plural_table_name %> list

@@ -1,14 +1,24 @@
-%section.columns.twelve
-	%header.row
+%section.row
+	%header.span12
 		%h1 Listing <%= plural_table_name %>
 	- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
-		%article.columns.twelve.<%= singular_table_name %>
+		%article.span12.well.<%= singular_table_name %>
 <% for attribute in attributes -%>
-			.columns.four.<%= singular_table_name %>-<%= attribute.name %>= <%= singular_table_name %>.<%= attribute.name %>
+			.row
+				%h4.span4.<%= singular_table_name %>-<%= attribute.name %>
+					<%= attribute.name %>: 
+				.span5
+					= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-			%aside.admin-links.absolute.top.right
-				%span.show.radius.label.secondary= link_to 'Show', <%= singular_table_name %>
-				%span.edit.radius.label= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-				%span.delete.radius.label.alert= link_to 'Delete', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete
+			%aside.btn-group
+				= link_to <%= singular_table_name %>, :class => "btn btn-mini" do
+					%i.icon-eye-open
+					Show
+				= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "btn btn-mini" do
+					%i.icon-pencil
+					Edit
+				= link_to <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini" do
+					%i.icon-trash
+					Delete
 	%footer
-		= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
+		= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, :class => "btn"

@@ -1,5 +1,13 @@
-# Haml-rails
+# A modification of Haml-rails
+This modification provides support for Twitter Bootstrap and HAML.
 
+To use this fork, add this line to your Gemfile:
+
+	gem 'haml-rails', :git => "git://github.com/brandonjmckay/haml-rails.git"
+
+Then type bundle into your command prompt. Cheers!
+
+--------------
 Haml-rails provides Haml generators for Rails 3. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
 To use it, add this line to your Gemfile:
