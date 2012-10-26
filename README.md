@@ -1,5 +1,9 @@
 # A modification of Haml-rails
 This modification provides support for Twitter Bootstrap and HAML.
+The difference between this mod and the layouts provided by the `twitter-bootstrap-rails` gem:
+-This mod uses `section`, `header` and `aside` tags for layout and action buttons
+-This doesn't have table tags
+-It uses the `.row` and `.span*` tags to setup default labels for attributes
 
 To use this fork, add this line to your Gemfile:
 
