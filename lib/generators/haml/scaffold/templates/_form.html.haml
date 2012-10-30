@@ -6,10 +6,12 @@
 				- @<%= singular_table_name %>.errors.full_messages.each do |msg|
 					%li= msg
 
-<% for attribute in attributes -%>
+	<% for attribute in attributes -%>
 	.control-group
 		= f.label :<%= attribute.name %>, :class => "control-label"
 		.controls
 			= f.<%= attribute.field_type %> :<%= attribute.name %>, :placeholder => "<%= attribute.name %>"
-<% end -%>
+	<% end -%>
+	.control-group
+		.control
 			= f.submit 'Save', :class => "btn"
